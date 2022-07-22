@@ -1,0 +1,4 @@
+const server = require("../app")
+const {WWW_PORT} = require("../config")
+const PORT = WWW_PORT
+server.listen(PORT,()=>console.log(`server started at : ${PORT}`))

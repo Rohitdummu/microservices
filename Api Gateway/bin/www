@@ -1,0 +1,4 @@
+const app=require("../app")
+const config=require("../config")
+const PORT=config.WWW_PORT
+app.listen(PORT,()=>{console.log(`api gateway listening at : ${PORT}`)})
