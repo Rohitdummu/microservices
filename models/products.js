@@ -14,7 +14,7 @@ const productschema = new schema({
         required : true
     },
     quantity:{
-        type:number,
+        type:Number,
         required:true
     },
     instock:{

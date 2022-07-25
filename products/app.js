@@ -6,10 +6,11 @@ server.use(cors())
 server.use(bp.json())
 const mongoose=require("mongoose")
 mongoose.connect("mongodb://localhost:27017/micro").then((res)=>console.log("connected to db")).catch((err)=>console.log("failure"))
+const pdModel = require("../models/products")
 
 server.get("/", async (req,res)=>{
     try{
-        const result = await AdModel.find({})
+        const result = await pdModel.find({})
         res.send({msg:"fetching products ",status:true,response:result}).status(200)
     }
     catch(err){
@@ -20,7 +21,7 @@ server.get("/", async (req,res)=>{
 server.get("/:type", async (req,res)=>{
     const data = req.params.type
     try{
-        const result = await AdModel.find({type:data})
+        const result = await pdModel.find({type:data})
         res.send({msg:"fetching products ",status:true,response:result}).status(200)
     }
     catch(err){
